@@ -5,7 +5,6 @@ function App() {
 
   return (
     <>
-      <h1>Data Fetching for - Redux Toolkit - React-19</h1>
       <PostsView />
     </>
   )

@@ -24,7 +24,8 @@ const PostsView = () => {
   if (error) return <h2>Error: {error}</h2>;
 
   return (
-    <>
+    <div className='mainFetchData'>
+      <h1>Data Fetching for - Redux Toolkit - React-19</h1>
       <div className='postData--fetch'>
         {currentPosts.map((post) => (
           <div key={post.id}>
@@ -51,7 +52,7 @@ const PostsView = () => {
           disabled={currentPage === Math.ceil(posts.length / postsPerPage)}
         >Next →</button>
       </div>
-    </>
+    </div>
   )
 }
 

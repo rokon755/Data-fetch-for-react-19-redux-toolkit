@@ -16,7 +16,7 @@ const postsSlice = createSlice({
     isLoading: false,
     error: null,
     currentPage: 1,
-    postsPerPage: 6,
+    postsPerPage: 5,
   },
   reducers: {
     nextPage: (state) => {
