@@ -14,11 +14,10 @@ const PostsView = () => {
   // Get current posts for the page
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-  // Handle pagination click
-  const paginate = (pageNumber) => dispatch(setCurrentPage(pageNumber));
+  // Total pages calculation
+  const totalPages = Math.ceil(posts.length / postsPerPage);
 
   if (isLoading) return <h2>Loading...</h2>;
   if (error) return <h2>Error: {error}</h2>;
@@ -49,8 +48,11 @@ const PostsView = () => {
         <span className='showPageText'> Page - {currentPage} </span>
         <button
           onClick={() => dispatch(nextPage())}
-          disabled={currentPage === Math.ceil(posts.length / postsPerPage)}
-        >Next →</button>
+          disabled={currentPage === totalPages}
+          className={currentPage === totalPages ? "disabled-btn" : ""}
+        >
+          Next  →
+        </button>
       </div>
     </div>
   )
