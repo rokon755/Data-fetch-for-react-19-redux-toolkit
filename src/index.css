@@ -55,3 +55,7 @@ body {
   overflow: hidden;
   font-size: 14px;
 }
+.errorMessageText, .isLoadingText {
+  max-width: 1380px;
+  margin: 0 auto;
+}

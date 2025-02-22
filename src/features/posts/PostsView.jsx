@@ -19,8 +19,8 @@ const PostsView = () => {
   // Total pages calculation
   const totalPages = Math.ceil(posts.length / postsPerPage);
 
-  if (isLoading) return <h2>Loading...</h2>;
-  if (error) return <h2>Error: {error}</h2>;
+  if (isLoading) return <h1 className='isLoadingText'>Loading...</h1>;
+  if (error) return <h1 className='errorMessageText'>Error: {error}</h1>;
 
   return (
     <div className='mainFetchData'>
