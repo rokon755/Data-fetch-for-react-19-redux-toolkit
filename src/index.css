@@ -66,13 +66,12 @@ body {
   display: flex;
   gap: 5px;
   margin-top: 20px;
-  justify-content: center;
 }
 
 .pagination button {
   padding: 5px 10px;
   cursor: pointer;
-  border: 1px solid #ddd;
+  border: 0px solid #ddd;
 }
 
 .pagination button.active {

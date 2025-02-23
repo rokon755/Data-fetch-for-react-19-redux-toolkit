@@ -3,16 +3,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { nextPage, prevPage, goToPage } from './postsSlice';
 
 const Pagination = () => {
+
   const dispatch = useDispatch();
+
   const { data, currentPage, postsPerPage } = useSelector(
     (state) => state.posts
   );
+
   const totalPages = Math.ceil(data.length / postsPerPage);
 
-  // Generate page numbers with dots
+
   const paginationNumbers = () => {
     const pages = [];
-    const maxPagesToShow = 4;
+    const maxPagesToShow = 3;
 
     if (totalPages <= maxPagesToShow) {
       for (let i = 1; i <= totalPages; i++) pages.push(i);
