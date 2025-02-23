@@ -67,7 +67,14 @@ body {
   gap: 5px;
   margin-top: 20px;
 }
-
+.privButton {
+  background: #007bff;
+  color: #fff;
+}
+button.nextButton {
+  background: #007bff;
+  color: #fff;
+}
 .pagination button {
   padding: 5px 10px;
   cursor: pointer;
@@ -80,8 +87,9 @@ body {
 }
 
 .pagination button:disabled {
-  background: #ccc;
+  background: #ddd;
   cursor: not-allowed;
+  color: #000;
 }
 
 .dots {
