@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPosts, nextPage, prevPage } from "./postsSlice";
+import { fetchPosts } from "./postsSlice";
+import Pagination from "./Pagination";
 
 const PostsView = () => {
 
@@ -15,9 +16,6 @@ const PostsView = () => {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-
-  // Total pages calculation
-  const totalPages = Math.ceil(posts.length / postsPerPage);
 
   if (isLoading) return <h1 className='isLoadingText'>Loading...</h1>;
   if (error) return <h1 className='errorMessageText'>Error: {error}</h1>;
@@ -36,24 +34,8 @@ const PostsView = () => {
         ))}
       </div>
 
-      {/* Pagination Buttons  */}
-      <div className='paginationButton'>
-        <button
-          onClick={() => dispatch(prevPage())}
-          disabled={currentPage === 1}
-          className={currentPage === 1 ? "disabled-btn" : ""}
-        >
-          ← Previous
-        </button>
-        <span className='showPageText'> Page - {currentPage} </span>
-        <button
-          onClick={() => dispatch(nextPage())}
-          disabled={currentPage === totalPages}
-          className={currentPage === totalPages ? "disabled-btn" : ""}
-        >
-          Next  →
-        </button>
-      </div>
+      <Pagination />
+
     </div>
   )
 }
